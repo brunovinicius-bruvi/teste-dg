@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: '/teste-dg/', // 👈 nome EXATO do repositório
+  base: "./", // 👈 ESSA LINHA É O SEGREDO
   plugins: [react()],
   resolve: {
     alias: {
@@ -11,7 +11,11 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
+  },
+  server: {
+    host: "::",
+    port: 8080,
   },
 });
